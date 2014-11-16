@@ -1,4 +1,16 @@
 services:
-#    mps_core.example:
-#        class: mps\CoreBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+    # twig template functions #################################################
+    core.twig.mx_extension:
+        class: CoreBundle\Twig\CoreExtension
+        arguments:
+            - '@core.config'
+        tags:
+            - { name: twig.extension }
+
+    # configuration loader ####################################################
+    core.config:
+        class: Core\Config\ConfigManager
+        arguments:
+            - '@doctrine_cache.providers.default'
+            - '%kernel.environment%'
+            - '%kernel.root_dir%'

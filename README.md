@@ -7,5 +7,8 @@ The skeleton is optimized for fast sf project bootstrapping and includes followi
 * some helper classes, inheriting from Controller and ContainerAwareCommand to ease e.g. Template-finding
 * basic project structure, following the one-bundle + core lib approach
 
+# installation
+just do the normal composer install.
+
 #License
 sf-project-skeleton is licensed under the MIT license. See the [LICENSE](Resources/meta/LICENSE) for the full license text.
