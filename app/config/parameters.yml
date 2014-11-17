@@ -15,3 +15,5 @@ parameters:
     debug_toolbar: true
     debug_redirects: false
     use_assetic_controller: true
+    default_cache: apc
+    default_cache_namespace: default_cache

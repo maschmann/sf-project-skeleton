@@ -13,11 +13,13 @@ class DefaultController extends Controller
 {
 
     /**
-     * @param string $name
      * @return mixed
      */
-    public function indexAction($name)
+    public function indexAction()
     {
-        return $this->render('CoreBundle:Default:index.html.twig', array('name' => $name));
+        return $this->render(
+            $this->getTemplatePath(),
+            array()
+        );
     }
 }
