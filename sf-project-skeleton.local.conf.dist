@@ -57,6 +57,8 @@ server {
         fastcgi_index           index.php;
         fastcgi_read_timeout    9000;
         fastcgi_param           SCRIPT_FILENAME $document_root/$fastcgi_script_name;
+        fastcgi_param           APP_ENVIRONMENT dev;
+        fastcgi_param           APP_DEBUG_MODE 1;
     }
 
 

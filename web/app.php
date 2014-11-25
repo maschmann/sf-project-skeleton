@@ -5,47 +5,30 @@ use Symfony\Component\HttpFoundation\Request;
 
 $loader = require_once __DIR__.'/../app/bootstrap.php.cache';
 
-$devServer = array(
-    'mps-api_dev.dev.local',
-    'mps-api.dev.local',
-);
+$serverEnv = getenv('APP_ENVIRONMENT');
+$serverDebug = (bool)getenv('APP_DEBUG_MODE');
+$serverName = $_SERVER['HTTP_HOST']; // think of proxy forwarding and ip address
 
-$testServer = array(
-    'stage.mps-api.de',
-);
-
-$serverEnv = getenv('SF_SERVER_ENVIRONMENT');
-$serverName = $_SERVER['HTTP_HOST'];
-$debug = false;
-switch (true) {
-    case in_array($serverName, $testServer) || $serverEnv == 'test':
-        $env = 'test';
-        break;
-    case  in_array($serverName, $devServer) || $serverEnv == 'dev':
-        $env = 'dev';
-        $debug = true;
-        break;
-    default:
-        $env = 'prod';
-        break;
+if (empty($serverEnv)) {
+    $serverEnv = 'prod';
 }
 
 // Use APC for autoloading to improve performance.
 // Change 'sf2' to a unique prefix in order to prevent cache key conflicts
 // with other applications also using APC.
-if ('dev' != $env) {
+/*if ('dev' != $serverEnv) {
     $apcLoader = new ApcClassLoader('sf2#', $loader);
     $loader->unregister();
     $apcLoader->register(true);
-}
+}*/
 
 require_once __DIR__.'/../app/AppKernel.php';
 require_once __DIR__.'/../app/AppCache.php';
 
-$kernel = new AppKernel($env, $debug);
+$kernel = new AppKernel($serverEnv, $serverDebug);
 $kernel->loadClassCache();
 
-if ('dev' != $env) {
+if ('dev' != $serverEnv) {
     $kernel = new AppCache($kernel);
 }
 
