@@ -43,15 +43,6 @@ class CoreExtension extends \Twig_Extension
     }
 
     /**
-     * get navigation as object from config manager
-     *
-     * @return \Asm\Config\ConfigInterface
-     */
-    public function getMainNavigation()
-    {
-    }
-
-    /**
      * Returns the name of the extension.
      *
      * @return string The extension name
