@@ -4,7 +4,9 @@
 /app/bootstrap*
 /app/cache/*
 /app/logs/*
+/app/Resources/node/
 /vendor/
+/vendor-js/
 /app/config/parameters.ini
 .buildpath
 .rsync_cache
@@ -21,3 +23,4 @@ fabfile.*
 /bin
 atlassian-ide-plugin.xml
 node_modules
+/*.log

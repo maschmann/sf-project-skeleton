@@ -1,3 +1,3 @@
 core_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: CoreBundle:Default:index }
+    path:     /
+    defaults: { _controller: CoreBundle:Home:index }

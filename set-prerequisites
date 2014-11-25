@@ -1,7 +1,0 @@
-#!/bin/bash
-#npm npm install -g gulp
-#npm install --save-dev gulp
-#npm install -g bower
-#bower install --save bootstrap-sass-official
-#npm install --save-dev gulp-sass
-#npm install --save-dev gulp-copy

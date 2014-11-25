@@ -1,0 +1,31 @@
+#!/bin/bash
+
+VERSION=0.10.33
+PLATFORM=linux
+ARCH=x64
+LOCAL_PATH=$PATH
+SEARCH="node/bin"
+CURRENT_DIR=$(cd $(dirname "$0"); pwd)
+#PREFIX="$HOME/node-v$VERSION-$PLATFORM-$ARCH"
+PREFIX="${CURRENT_DIR}/app/Resources/node"
+
+rm -R $PREFIX
+mkdir -p "$PREFIX" && curl http://nodejs.org/dist/v$VERSION/node-v$VERSION-$PLATFORM-$ARCH.tar.gz | tar xzvf - --strip-components=1 -C "$PREFIX"
+
+if [ "${LOCAL_PATH/$SEARCH}" = "$LOCAL_PATH" ] ; then
+  export PATH=$PATH:${CURRENT_DIR}/app/Resources/node/bin
+fi
+
+#npm install -g gulp
+npm config set ca ""
+npm install gulp
+npm install --save-dev gulp
+npm install --save-dev gulp-util
+npm install --save-dev gulp-scss
+npm install --save-dev gulp-uglify
+npm install --save-dev gulp-livereload
+npm install --save-dev gulp-jshint
+npm install --save-dev gulp-concat
+npm install --save-dev gulp-copy
+npm install --save-dev gulp-if
+npm install --save-dev gulp-uglifycss

@@ -5,11 +5,11 @@ namespace CoreBundle\Controller;
 use Core\Controller\BaseController as Controller;
 
 /**
- * Class DefaultController
+ * Class HomeController
  *
  * @package CoreBundle\Controller
  */
-class DefaultController extends Controller
+class HomeController extends Controller
 {
 
     /**
