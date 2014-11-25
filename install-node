@@ -24,8 +24,7 @@ if [ "${LOCAL_PATH/$SEARCH}" = "$LOCAL_PATH" ] ; then
 fi
 
 npm config set ca ""
-#npm install -g gulp
-npm install gulp
+npm install -g gulp
 npm install --save-dev gulp
 npm install --save-dev gulp-concat
 npm install --save-dev gulp-copy
