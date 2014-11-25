@@ -7,10 +7,17 @@ LOCAL_PATH=$PATH
 SEARCH="node/bin"
 CURRENT_DIR=$(cd $(dirname "$0"); pwd)
 #PREFIX="$HOME/node-v$VERSION-$PLATFORM-$ARCH"
+VERSIONSTRING="node-v$VERSION-$PLATFORM-$ARCH"
 PREFIX="${CURRENT_DIR}/app/Resources/node"
 
-rm -R $PREFIX
-mkdir -p "$PREFIX" && curl http://nodejs.org/dist/v$VERSION/node-v$VERSION-$PLATFORM-$ARCH.tar.gz | tar xzvf - --strip-components=1 -C "$PREFIX"
+if [ ! -f "$PREFIX/$VERSIONSTRING" ]; then
+  if [ -d $PREFIX ]; then
+    rm -R $PREFIX
+  fi
+
+  mkdir -p "$PREFIX" && curl http://nodejs.org/dist/v$VERSION/node-v$VERSION-$PLATFORM-$ARCH.tar.gz | tar xzvf - --strip-components=1 -C "$PREFIX"
+  touch $PREFIX/$VERSIONSTRING
+fi
 
 if [ "${LOCAL_PATH/$SEARCH}" = "$LOCAL_PATH" ] ; then
   export PATH=$PATH:${CURRENT_DIR}/app/Resources/node/bin
