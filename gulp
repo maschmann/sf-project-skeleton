@@ -8,7 +8,7 @@ if [ "${LOCAL_PATH/$SEARCH}" = "$LOCAL_PATH" ] ; then
 fi
 
 if [ "${LOCAL_PATH/"node_modules/.bin"}" = "$LOCAL_PATH" ] ; then
-  export PATH=$PATH:~/lib/node_modules/gulp/bin
+  export PATH=$PATH:${CURRENT_DIR}/node_modules/.bin
 fi
 
-gulp.js "$@"
+gulp "$@"

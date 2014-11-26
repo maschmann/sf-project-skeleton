@@ -7,11 +7,11 @@ var gulp = require('gulp'),
 /**
  * check for commandline params and define defaults
  */
-if (util.env.theme) {
-    theme = util.env.theme;
+if (plugins.util.env.theme) {
+    theme = plugins.util.env.theme;
 }
 
-if (util.env.env && util.env.env !== 'prod') {
+if (plugins.util.env.env && plugins.util.env.env !== 'prod') {
     minify = false;
 }
 
@@ -28,7 +28,7 @@ gulp.task('core-sass-default', function () {
     ])
     .pipe(plugins.sass({sourceComments: 'map'}))
     .pipe(plugins.concat('core.min.css'))
-    .pipe(plugins.gulpif(minify, plugins.uglifycss()))
+    .pipe(plugins.if(minify, plugins.uglifycss()))
     .pipe(gulp.dest('./web/css/'));
 });
 
@@ -42,7 +42,7 @@ gulp.task('core-js-default', function() {
     .pipe(plugins.jshint())
     .pipe(plugins.jshint.reporter('default'))
     .pipe(plugins.concat('core.min.js'))
-    .pipe(plugins.gulpif(minify, plugins.uglify()))
+    .pipe(plugins.if(minify, plugins.uglify()))
     .pipe(gulp.dest('./web/js'));
 });
 
