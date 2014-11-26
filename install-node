@@ -29,6 +29,7 @@ npm config set ca ""
 
 # install gulp and modules
 npm install --save-dev gulp
+npm install --save-dev lodash
 npm install --save-dev gulp-autoprefixer
 npm install --save-dev gulp-concat
 npm install --save-dev gulp-copy

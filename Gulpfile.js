@@ -1,8 +1,10 @@
 var gulp = require('gulp'),
+    //_ = require('lodash'),
     gulpLoadPlugins = require('gulp-load-plugins'),
     plugins = gulpLoadPlugins(),
     theme = 'default',
-    minify = true;
+    env = 'dev',
+    minify = false;
 
 /**
  * check for commandline params and define defaults
@@ -11,8 +13,9 @@ if (plugins.util.env.theme) {
     theme = plugins.util.env.theme;
 }
 
-if (plugins.util.env.env && plugins.util.env.env !== 'prod') {
-    minify = false;
+if (plugins.util.env.env && plugins.util.env.env == 'prod') {
+    minify = true;
+    env = 'prod';
 }
 
 gulp.task('default', function () {});
@@ -23,27 +26,30 @@ gulp.task('build-css', ['core-sass-' + theme]);
 
 gulp.task('core-sass-default', function () {
     gulp.src([
-        './src/CoreBundle/Resources/sass/core.default.scss',
-        './src/CoreBundle/Resources/sass/*.default.scss'
+        './vendor/npm-asset/bootstrap/dist/css/bootstrap.css',
+        './vendor/npm-asset/bootstrap/dist/css/bootstrap-theme.css',
+        './src/CoreBundle/Resources/sass/core.default.sass',
+        './src/CoreBundle/Resources/sass/*.default.sass'
     ])
     .pipe(plugins.sass({sourceComments: 'map'}))
-    .pipe(plugins.concat('core.min.css'))
     .pipe(plugins.if(minify, plugins.uglifycss()))
-    .pipe(gulp.dest('./web/css/'));
+    .pipe(plugins.concat('core.min.css'))
+    .pipe(gulp.dest('./web/css/' + env));
 });
 
 gulp.task('core-js-default', function() {
     gulp.src([
-        './web/bundles/*/js/**/*.' + theme + '.js',
-        './vendor-js/bootstrap-sass-official/vendor/assets/javascripts/*/*.js',
-        './vendor-js/jquery/dist/jquery.js',
-        './vendor-js/requirejs/require.js'
+        './vendor/bower-asset/jquery/dist/jquery.js',
+        './vendor/bower-asset/jquery-ui/jquery-ui.js',
+        './vendor/npm-asset/bootstrap/dist/js/bootstrap.js',
+        './vendor/npm-asset/requirejs/require.js',
+        './web/bundles/*/js/**/*.' + theme + '.js'
     ])
     .pipe(plugins.jshint())
     .pipe(plugins.jshint.reporter('default'))
     .pipe(plugins.concat('core.min.js'))
     .pipe(plugins.if(minify, plugins.uglify()))
-    .pipe(gulp.dest('./web/js'));
+    .pipe(gulp.dest('./web/js/' + env));
 });
 
 gulp.task('watch', function () {

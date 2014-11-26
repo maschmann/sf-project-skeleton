@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a0106b2b1034cd8566f8638d465500e2",
+    "hash": "781db201ff5c55c08c66c7295f837482",
     "packages": [
         {
             "name": "asm/php-utilities",
@@ -46,6 +46,74 @@
             "description": "php tools with data container, collection objects and timer",
             "homepage": "https://github.com/maschmann/php-utilities",
             "time": "2014-08-26 20:27:11"
+        },
+        {
+            "name": "bower-asset/jquery",
+            "version": "2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jquery/jquery.git",
+                "reference": "4dec426aa2a6cbabb1b064319ba7c272d594a688"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jquery/jquery/zipball/4dec426aa2a6cbabb1b064319ba7c272d594a688",
+                "reference": "4dec426aa2a6cbabb1b064319ba7c272d594a688",
+                "shasum": ""
+            },
+            "require-dev": {
+                "bower-asset/qunit": "1.14.0",
+                "bower-asset/requirejs": "2.1.10",
+                "bower-asset/sinon": "1.8.1",
+                "bower-asset/sizzle": "1.10.19"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "dist/jquery.js",
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "build",
+                    "speed",
+                    "test",
+                    "*.md",
+                    "AUTHORS.txt",
+                    "Gruntfile.js",
+                    "package.json"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "keywords": [
+                "javascript",
+                "jquery",
+                "library"
+            ]
+        },
+        {
+            "name": "bower-asset/jquery-ui",
+            "version": "1.11.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/jqueryui.git",
+                "reference": "396781474d936959061271505f506b78398fe6a2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/jqueryui/zipball/396781474d936959061271505f506b78398fe6a2",
+                "reference": "396781474d936959061271505f506b78398fe6a2",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.6"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "jquery-ui.js"
+                ],
+                "bower-asset-ignore": []
+            }
         },
         {
             "name": "doctrine/annotations",
@@ -739,6 +807,62 @@
             "time": "2014-10-06 13:22:50"
         },
         {
+            "name": "fxp/composer-asset-plugin",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/francoispluchino/composer-asset-plugin.git",
+                "reference": "49b65d2bfb4af9f97a88c77fa9fdbf9f18f77bca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/francoispluchino/composer-asset-plugin/zipball/49b65d2bfb4af9f97a88c77fa9fdbf9f18f77bca",
+                "reference": "49b65d2bfb4af9f97a88c77fa9fdbf9f18f77bca",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "1.0.0",
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "composer/composer": "~1.0@dev"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Fxp\\Composer\\AssetPlugin\\FxpAssetPlugin",
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Fxp\\Composer\\AssetPlugin\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Pluchino",
+                    "email": "francois.pluchino@gmail.com"
+                }
+            ],
+            "description": "NPM/Bower Dependency Manager for Composer",
+            "homepage": "https://github.com/francoispluchino/composer-asset-plugin",
+            "keywords": [
+                "asset",
+                "bower",
+                "composer",
+                "dependency manager",
+                "nodejs",
+                "npm",
+                "package"
+            ],
+            "time": "2014-11-26 11:11:20"
+        },
+        {
             "name": "incenteev/composer-parameter-handler",
             "version": "v2.1.0",
             "target-dir": "Incenteev/ParameterHandler",
@@ -985,6 +1109,102 @@
                 "psr-3"
             ],
             "time": "2014-09-30 13:30:58"
+        },
+        {
+            "name": "npm-asset/bootstrap",
+            "version": "v3.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twbs/bootstrap.git",
+                "reference": "9a7e365c2c4360335d25246dac11afb1f577210a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/9a7e365c2c4360335d25246dac11afb1f577210a",
+                "reference": "9a7e365c2c4360335d25246dac11afb1f577210a",
+                "shasum": ""
+            },
+            "require-dev": {
+                "npm-asset/btoa": ">=1.1.2,<1.2",
+                "npm-asset/glob": ">=4.0.6,<4.1",
+                "npm-asset/grunt": ">=0.4.5,<0.5",
+                "npm-asset/grunt-autoprefixer": ">=1.0.1,<1.1",
+                "npm-asset/grunt-banner": ">=0.2.3,<0.3",
+                "npm-asset/grunt-contrib-clean": ">=0.6.0,<0.7",
+                "npm-asset/grunt-contrib-concat": ">=0.5.0,<0.6",
+                "npm-asset/grunt-contrib-connect": ">=0.9.0,<0.10",
+                "npm-asset/grunt-contrib-copy": ">=0.7.0,<0.8",
+                "npm-asset/grunt-contrib-csslint": ">=0.3.1,<0.4",
+                "npm-asset/grunt-contrib-cssmin": ">=0.10.0,<0.11",
+                "npm-asset/grunt-contrib-jade": ">=0.13.0,<0.14",
+                "npm-asset/grunt-contrib-jshint": ">=0.10.0,<0.11",
+                "npm-asset/grunt-contrib-less": ">=0.12.0,<0.13",
+                "npm-asset/grunt-contrib-qunit": ">=0.5.2,<0.6",
+                "npm-asset/grunt-contrib-uglify": ">=0.6.0,<0.7",
+                "npm-asset/grunt-contrib-watch": ">=0.6.1,<0.7",
+                "npm-asset/grunt-csscomb": ">=3.0.0,<3.1",
+                "npm-asset/grunt-exec": ">=0.4.6,<0.5",
+                "npm-asset/grunt-html-validation": ">=0.1.18,<0.2",
+                "npm-asset/grunt-jekyll": ">=0.4.2,<0.5",
+                "npm-asset/grunt-jscs": ">=0.8.1,<0.9",
+                "npm-asset/grunt-saucelabs": ">=8.3.2,<8.4",
+                "npm-asset/grunt-sed": ">=0.1.1,<0.2",
+                "npm-asset/load-grunt-tasks": ">=1.0.0,<1.1",
+                "npm-asset/npm-shrinkwrap": ">=5.1.0,<5.2",
+                "npm-asset/remarkable": ">=1.4.0,<1.5",
+                "npm-asset/time-grunt": ">=1.0.0,<1.1"
+            },
+            "type": "npm-asset-library",
+            "extra": {
+                "npm-asset-bugs": {
+                    "url": "https://github.com/twbs/bootstrap/issues"
+                },
+                "npm-asset-main": "./dist/js/npm",
+                "npm-asset-repository": {
+                    "type": "git",
+                    "url": "https://github.com/twbs/bootstrap.git"
+                },
+                "npm-asset-scripts": {
+                    "test": "grunt test"
+                },
+                "npm-asset-engines": {
+                    "node": "~0.10.1"
+                }
+            },
+            "license": {
+                "type": "MIT",
+                "url": "https://github.com/twbs/bootstrap/blob/master/LICENSE"
+            },
+            "authors": [
+                "Twitter, Inc."
+            ],
+            "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+            "homepage": "http://getbootstrap.com",
+            "keywords": [
+                "css",
+                "framework",
+                "front-end",
+                "less",
+                "mobile-first",
+                "responsive",
+                "web"
+            ]
+        },
+        {
+            "name": "npm-asset/requirejs",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jrburke/r.js.git",
+                "reference": "e764f5c476fa665fd9ac60d82b20ad4b0e65f3fe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jrburke/r.js/zipball/e764f5c476fa665fd9ac60d82b20ad4b0e65f3fe",
+                "reference": "e764f5c476fa665fd9ac60d82b20ad4b0e65f3fe",
+                "shasum": ""
+            },
+            "type": "npm-asset-library"
         },
         {
             "name": "psr/log",
@@ -1645,7 +1865,10 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "fxp/composer-asset-plugin": 20,
+        "npm-asset/requirejs": 20
+    },
     "prefer-stable": false,
     "platform": {
         "php": ">=5.3.3"

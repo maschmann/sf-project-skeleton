@@ -19,7 +19,12 @@
         "sensio/framework-extra-bundle": "~3.0",
         "incenteev/composer-parameter-handler": "~2.0",
         "asm/php-utilities": "1.0.0",
-        "doctrine/doctrine-cache-bundle": "~1.0"
+        "doctrine/doctrine-cache-bundle": "~1.0",
+        "fxp/composer-asset-plugin": "1.0.*@dev",
+        "npm-asset/bootstrap": "~3.3",
+        "npm-asset/requirejs": "dev-master",
+        "bower-asset/jquery": "~2.1.0",
+        "bower-asset/jquery-ui": "~1.11"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
