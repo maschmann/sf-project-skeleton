@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=0.10.33
+VERSION=0.10.34
 PLATFORM=linux
 ARCH=x64
 LOCAL_PATH=$PATH
@@ -18,6 +18,9 @@ if [ ! -f "$PREFIX/$VERSIONSTRING" ]; then
   mkdir -p "$PREFIX" && curl http://nodejs.org/dist/v$VERSION/node-v$VERSION-$PLATFORM-$ARCH.tar.gz | tar xzvf - --strip-components=1 -C "$PREFIX"
   touch $PREFIX/$VERSIONSTRING
 fi
+
+# globally install composer asset handling plugin
+composer global require fxp/composer-asset-plugin 1.0.*@dev
 
 if [ "${LOCAL_PATH/$SEARCH}" = "$LOCAL_PATH" ] ; then
   export PATH=$PATH:${CURRENT_DIR}/app/Resources/node/bin
@@ -37,8 +40,12 @@ npm install --save-dev gulp-if
 npm install --save-dev gulp-jshint
 npm install --save-dev gulp-livereload
 npm install --save-dev gulp-load-plugins
-npm install --save-dev gulp-sass
+npm install --save-dev gulp-plumber
+npm install --save-dev gulp-stylus
 npm install --save-dev gulp-sourcemaps
 npm install --save-dev gulp-uglify
 npm install --save-dev gulp-uglifycss
 npm install --save-dev gulp-util
+npm install --save-dev gulp-watch
+npm install --save-dev gulp-size
+npm install --save-dev gulp-autoprefixer

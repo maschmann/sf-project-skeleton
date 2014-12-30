@@ -8,7 +8,7 @@
     },
     "require": {
         "php": ">=5.3.3",
-        "symfony/symfony": "2.5.*",
+        "symfony/symfony": "2.6.*",
         "doctrine/orm": "~2.2,>=2.2.3",
         "doctrine/doctrine-bundle": "~1.2",
         "twig/extensions": "~1.0",
@@ -18,16 +18,15 @@
         "sensio/distribution-bundle": "~3.0",
         "sensio/framework-extra-bundle": "~3.0",
         "incenteev/composer-parameter-handler": "~2.0",
-        "asm/php-utilities": "1.0.0",
-        "doctrine/doctrine-cache-bundle": "~1.0",
-        "fxp/composer-asset-plugin": "1.0.*@dev",
+        "asm/php-utilities": "1.1.0",
+        "doctrine/doctrine-cache-bundle": "~1.0"
+    },
+    "require-dev": {
+        "sensio/generator-bundle": "~2.3",
         "npm-asset/bootstrap": "~3.3",
         "npm-asset/requirejs": "dev-master",
         "bower-asset/jquery": "~2.1.0",
         "bower-asset/jquery-ui": "~1.11"
-    },
-    "require-dev": {
-        "sensio/generator-bundle": "~2.3"
     },
     "scripts": {
         "post-root-package-install": [
