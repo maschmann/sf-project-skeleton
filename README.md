@@ -13,4 +13,4 @@ Just do the normal composer install.
 Afterwards start the install-node script from project root, which will install a current stable version of node plus gulp and gulp modules, locally. Start builiding with ./gulp from project root.
 
 #License
-sf-project-skeleton is licensed under the MIT license. See the [LICENSE](Resources/meta/LICENSE) for the full license text.
+sf-project-skeleton is licensed under the MIT license. See the [LICENSE](app/Resources/meta/LICENSE) for the full license text.
