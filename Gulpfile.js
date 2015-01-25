@@ -19,15 +19,15 @@ if (plugins.util.env.env && plugins.util.env.env == 'prod') {
 }
 
 var files = {
-    js: {
+    css: {
         core: [
             './vendor/npm-asset/bootstrap/dist/css/bootstrap.css',
             './vendor/npm-asset/bootstrap/dist/css/bootstrap-theme.css',
-            './src/CoreBundle/Resources/sass/core.default.sass',
-            './src/CoreBundle/Resources/sass/*.default.sass'
+            './src/CoreBundle/Resources/stylus/core.default.styl',
+            './src/CoreBundle/Resources/stylus/*.default.styl'
         ]
     },
-    css: {
+    js: {
         core: [
             './vendor/bower-asset/jquery/dist/jquery.js',
             './vendor/bower-asset/jquery-ui/jquery-ui.js',
@@ -41,22 +41,21 @@ var files = {
 gulp.task('handle-assets', ['build-js', 'build-css']);
 
 gulp.task('default', ['build-js', 'build-css'], function () {
-    gulp.watch(files.css.core, ['core-sass-default']);
+    gulp.watch(files.css.core, ['core-stylus-default']);
     gulp.watch(files.js.bootstrap,['core-js-default']);
 });
 
 /** general task bundlers **/
 gulp.task('build-js', ['core-js-' + theme]);
-gulp.task('build-css', ['core-sass-' + theme]);
+gulp.task('build-css', ['core-stylus-' + theme]);
 
-gulp.task('core-sass-default', function () {
+gulp.task('core-stylus-default', function () {
     gulp.src(files.css.core)
     .pipe(plugins.plumber())
     .pipe(plugins.sourcemaps.init())
-    .pipe(plugins.sass({sourceComments: 'map'}))
-    .pipe(plugins.if(minify, plugins.uglifycss()))
-    .pipe(plugins.concat('core.css'))
-    .pipe(plugins.autoprefixer('last 2 versions'))
+        .pipe(plugins.stylus({compress: minify}))
+        .pipe(plugins.concat('core.css'))
+        /** .pipe(plugins.autoprefixer('last 2 versions')) **/
     .pipe(plugins.sourcemaps.write('./'))
     .pipe(gulp.dest('./web/css/' + env));
 });

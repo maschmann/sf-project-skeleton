@@ -19,7 +19,8 @@ use Doctrine\Common\Cache\CacheProvider;
  * @package Core\Config
  * @author maschmann@gmail.com
  */
-class ConfigManager {
+final class ConfigManager
+{
     /**
      * @var string
      */
