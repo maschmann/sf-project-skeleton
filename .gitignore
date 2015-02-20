@@ -6,7 +6,6 @@
 /app/logs/*
 /app/Resources/node/
 /vendor/
-/app/config/parameters.ini
 .buildpath
 .rsync_cache
 .rsync_cache/*
