@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=0.10.34
+VERSION=0.12.0
 PLATFORM=linux
 ARCH=x64
 LOCAL_PATH=$PATH

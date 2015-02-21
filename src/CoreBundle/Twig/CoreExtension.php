@@ -40,6 +40,7 @@ class CoreExtension extends \Twig_Extension
      */
     public function getFunctions()
     {
+        return array();
     }
 
     /**
@@ -51,5 +52,4 @@ class CoreExtension extends \Twig_Extension
     {
         return 'core_extension';
     }
-
 }

@@ -64,8 +64,8 @@ gulp.task('core-js-default', function() {
     gulp.src(files.js.core)
     .pipe(plugins.plumber())
     .pipe(plugins.sourcemaps.init())
-    .pipe(plugins.jshint())
-    .pipe(plugins.jshint.reporter('default'))
+    /*.pipe(plugins.jshint())
+    .pipe(plugins.jshint.reporter('default'))*/
     .pipe(plugins.concat('core.js'))
     .pipe(plugins.if(minify, plugins.uglify()))
     .pipe(plugins.sourcemaps.write('./'))
