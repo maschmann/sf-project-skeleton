@@ -5,7 +5,7 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block meta %}{% endblock %}
         {% block stylesheets %}
-        <link href="{{ asset('/css/' ~ app.environment ~ 'core.css') }}" rel="stylesheet">
+        <link href="{{ asset('/css/' ~ app.environment ~ '/core.css') }}" rel="stylesheet">
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
@@ -22,7 +22,7 @@
         </footer>
         {% endblock %}
         {% block javascripts %}
-        <link href="{{ asset('/js/' ~ app.environment ~ 'core.js') }}" rel="stylesheet">
+        <script src="{{ asset('/js/' ~ app.environment ~ '/core.js') }}"></script>
         {% endblock %}
     </body>
 </html>
