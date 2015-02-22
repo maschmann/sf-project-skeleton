@@ -1,11 +1,23 @@
+# ignore assets, keep in mind that prod/ assets will be versioned
 /web/bundles/
-/web/css/*
-/web/js/*
-/app/bootstrap*
+/web/css/dev
+/web/js/dev
+/web/css/test
+/web/js/test
+
+# symfony cache and logs
 /app/cache/*
 /app/logs/*
+
+# our local node install, node modules and node logs
 /app/Resources/node/
+node_modules
+/*.log
+
+# thirparty stuff
 /vendor/
+
+# files by various IDEs
 .buildpath
 .rsync_cache
 .rsync_cache/*
@@ -14,11 +26,7 @@
 .idea/*
 .idea
 .settings/org.eclipse.php.core.prefs
-LICENSE
-README.md
 *.php~
 fabfile.*
 /bin
 atlassian-ide-plugin.xml
-node_modules
-/*.log
