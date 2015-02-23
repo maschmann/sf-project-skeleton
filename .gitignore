@@ -14,7 +14,7 @@
 node_modules
 /*.log
 
-# thirparty stuff
+# thirdparty stuff
 /vendor/
 
 # files by various IDEs
