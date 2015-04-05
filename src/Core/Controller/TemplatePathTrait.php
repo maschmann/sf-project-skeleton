@@ -15,7 +15,7 @@ namespace Core\Controller;
  * @package Core\Controller
  * @author Marc Aschmann <maschmann@gmail.com>
  */
-trait BaseControllerTrait
+trait TemplatePathTrait
 {
     /**
      * get the template path for current bundle, controller and action
@@ -23,7 +23,7 @@ trait BaseControllerTrait
      * @param string $method action name or namespace
      * @return string symfony formatted template path
      */
-    protected function getTemplatePath($method = 'index')
+    public function getTemplatePath($method = 'index')
     {
         /**
          * true for SF application bundle controllers
