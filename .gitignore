@@ -17,6 +17,10 @@ node_modules
 # thirdparty stuff
 /vendor/
 
+# bin folder
+/bin/*
+!/bin/install-node
+
 # files by various IDEs
 .buildpath
 .rsync_cache
@@ -28,5 +32,4 @@ node_modules
 .settings/org.eclipse.php.core.prefs
 *.php~
 fabfile.*
-/bin
 atlassian-ide-plugin.xml

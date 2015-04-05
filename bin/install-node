@@ -1,11 +1,11 @@
 #!/bin/bash
 
-VERSION=0.12.0
+VERSION=0.12.2
 PLATFORM=linux
 ARCH=x64
 LOCAL_PATH=$PATH
 SEARCH="node/bin"
-CURRENT_DIR=$(cd $(dirname "$0"); pwd)
+CURRENT_DIR=$(pwd)
 #PREFIX="$HOME/node-v$VERSION-$PLATFORM-$ARCH"
 VERSIONSTRING="node-v$VERSION-$PLATFORM-$ARCH"
 PREFIX="${CURRENT_DIR}/app/Resources/node"

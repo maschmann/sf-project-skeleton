@@ -10,7 +10,7 @@ The skeleton is optimized for fast sf project bootstrapping and includes followi
 
 # installation
 Just do the normal composer install.
-Afterwards start the install-node script from project root, which will install a current stable version of node plus gulp and gulp modules, locally. Start builiding with ./gulp from project root.
+Afterwards start the bin/install-node script from project root, which will install a current stable version of node plus gulp and gulp modules, locally. Start builiding with app/gulp from project root.
 
 #License
 sf-project-skeleton is licensed under the MIT license. See the [LICENSE](app/Resources/meta/LICENSE) for the full license text.

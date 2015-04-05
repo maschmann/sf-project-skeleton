@@ -40,7 +40,9 @@ var files = {
 
 gulp.task('handle-assets', ['build-js', 'build-css']);
 
-gulp.task('default', ['build-js', 'build-css'], function () {
+gulp.task('default', ['handle-assets']);
+
+gulp.task('watch', ['handle-assets'], function () {
     gulp.watch(files.css.core, ['core-stylus-default']);
     gulp.watch(files.js.bootstrap,['core-js-default']);
 });
