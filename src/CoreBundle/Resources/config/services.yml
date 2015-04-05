@@ -1,16 +1,7 @@
-services:
-    # twig template functions #################################################
-    core.twig.mx_extension:
-        class: CoreBundle\Twig\CoreExtension
-        arguments:
-            - '@core.config'
-        tags:
-            - { name: twig.extension }
+parameters:
 
-    # configuration loader ####################################################
-    core.config:
-        class: Core\Config\ConfigManager
-        arguments:
-            - '@doctrine_cache.providers.default'
-            - '%kernel.environment%'
-            - '%kernel.root_dir%'
+services:
+
+    core.home_controller:
+        parent: core.abstract_service_controller
+        class: CoreBundle\Controller\HomeController
