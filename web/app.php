@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 $loader = require_once __DIR__.'/../app/bootstrap.php.cache';
 
 $serverEnv = getenv('APP_ENVIRONMENT');
-$serverDebug = (bool)getenv('APP_DEBUG_MODE');
+$serverDebug = (bool)getenv('APP_DEBUG');
 $serverName = $_SERVER['HTTP_HOST']; // think of proxy forwarding and ip address
 
 if (empty($serverEnv)) {
