@@ -1,9 +1,6 @@
 # ignore assets, keep in mind that prod/ assets will be versioned
 /web/bundles/
-/web/css/dev
-/web/js/dev
-/web/css/test
-/web/js/test
+/web/assets/*
 
 # symfony cache and logs
 /app/cache/*
@@ -20,16 +17,3 @@ node_modules
 # bin folder
 /bin/*
 !/bin/install-node
-
-# files by various IDEs
-.buildpath
-.rsync_cache
-.rsync_cache/*
-.settings/*
-.settings
-.idea/*
-.idea
-.settings/org.eclipse.php.core.prefs
-*.php~
-fabfile.*
-atlassian-ide-plugin.xml
