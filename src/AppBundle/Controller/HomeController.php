@@ -1,12 +1,12 @@
 <?php
-namespace CoreBundle\Controller;
+namespace AppBundle\Controller;
 
 use Core\Controller\BaseServiceController;
 
 /**
  * Class HomeController
  *
- * @package CoreBundle\Controller
+ * @package AppBundle\Controller
  */
 class HomeController extends BaseServiceController
 {

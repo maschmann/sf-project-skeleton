@@ -1,5 +1,5 @@
 <?php
-namespace CoreBundle\Command;
+namespace AppBundle\Command;
 
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -9,7 +9,7 @@ use Core\Command\BaseCommand;
 
 /**
  * Class DefaultCommand
- * @package CoreBundle\Command
+ * @package AppBundle\Command
  */
 class DefaultCommand extends BaseCommand
 {

@@ -4,11 +4,11 @@ SEARCH="node/bin"
 CURRENT_DIR=$(pwd)
 
 if [ "${LOCAL_PATH/$SEARCH}" = "$LOCAL_PATH" ] ; then
-  export PATH=$PATH:${CURRENT_DIR}/app/Resources/node/bin
+  export PATH=$PATH:${CURRENT_DIR}/var/node/bin
 fi
 
 if [ "${LOCAL_PATH/"node_modules/.bin"}" = "$LOCAL_PATH" ] ; then
   export PATH=$PATH:${CURRENT_DIR}/node_modules/.bin
 fi
 
-gulp "$@"
+ncu "$@"

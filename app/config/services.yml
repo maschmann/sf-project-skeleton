@@ -3,7 +3,7 @@ parameters:
 services:
     # twig template functions #################################################
     core.twig.mx_extension:
-        class: CoreBundle\Twig\CoreExtension
+        class: AppBundle\Twig\CoreExtension
         arguments:
             - '@core.config'
         tags:

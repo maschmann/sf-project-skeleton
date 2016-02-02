@@ -35,10 +35,10 @@ var files = {
     css: {
         core: {
             files: [
-            './vendor/npm-asset/bootstrap/dist/css/bootstrap.css',
-                './vendor/npm-asset/bootstrap/dist/css/bootstrap-theme.css',
-                './src/CoreBundle/Resources/stylus/core.default.styl',
-                './src/CoreBundle/Resources/stylus/*.default.styl'
+                './node_modules/bootstrap/dist/css/bootstrap.css',
+                './node_modules/bootstrap/dist/css/bootstrap-theme.css',
+                './src/AppBundle/Resources/stylus/core.default.styl',
+                './src/AppBundle/Resources/stylus/*.default.styl'
             ],
             name: 'core.css',
             dest: './web/assets'
@@ -47,11 +47,11 @@ var files = {
     js: {
         core: {
             files: [
-                './vendor/bower-asset/jquery/dist/jquery.js',
-                './vendor/bower-asset/jquery-ui/jquery-ui.js',
-                './vendor/npm-asset/bootstrap/dist/js/bootstrap.js',
-                './vendor/npm-asset/requirejs/require.js',
-                './web/bundles/*/js/**/*.' + theme + '.js'
+                './node_modules/jquery/dist/jquery.js',
+                './node_modules/jquery-ui-bundle/jquery-ui.js',
+                './node_modules/bootstrap/dist/js/bootstrap.js',
+                './node_modules/requirejs/require.js',
+                './src/AppBundle/Resources/public/js/*.' + theme + '.js'
             ],
             name: 'core.js',
             dest: './web/assets'
@@ -64,8 +64,8 @@ gulp.task('handle-assets', ['build-js', 'build-css']);
 gulp.task('default', ['handle-assets']);
 
 gulp.task('watch', ['handle-assets'], function () {
-    gulp.watch(files.css.core, ['core-stylus-default']);
-    gulp.watch(files.js.bootstrap,['core-js-default']);
+    gulp.watch(files.css.core.files, ['core-stylus-default']);
+    gulp.watch(files.js.files,['core-js-default']);
 });
 
 /** general task bundlers **/

@@ -2,13 +2,8 @@
 /web/bundles/
 /web/assets/*
 
-# symfony cache and logs
-/app/cache/*
-/app/logs/*
-
 # our local node install, node modules and node logs
-/app/Resources/node/
-node_modules
+/node_modules
 /*.log
 
 # thirdparty stuff
@@ -17,3 +12,20 @@ node_modules
 # bin folder
 /bin/*
 !/bin/install-node
+!/bin/gulp
+!/bin/npm
+!/bin/ncu
+!/bin/node
+!/bin/console
+
+/var/*
+!/var/cache
+/var/cache/*
+!var/cache/.gitkeep
+!/var/logs
+/var/logs/*
+!var/logs/.gitkeep
+!/var/sessions
+/var/sessions/*
+!var/sessions/.gitkeep
+!var/SymfonyRequirements.php

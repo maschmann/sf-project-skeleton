@@ -8,14 +8,14 @@
  * file that was distributed with this source code.
  */
 
-namespace CoreBundle\Twig;
+namespace AppBundle\Twig;
 
-use Core\Config\ConfigManager;
+use Core\Config\ConfigManagerInterface;
 
 /**
  * Class CoreExtension
  *
- * @package CoreBundle\Twig
+ * @package AppBundle\Twig
  * @author maschmann@gmail.com
  */
 class CoreExtension extends \Twig_Extension
@@ -26,9 +26,9 @@ class CoreExtension extends \Twig_Extension
     private $configManager;
 
     /**
-     * @param ConfigManager $configManager
+     * @param ConfigManagerInterface $configManager
      */
-    public function __construct(ConfigManager $configManager)
+    public function __construct(ConfigManagerInterface $configManager)
     {
         $this->configManager = $configManager;
     }
